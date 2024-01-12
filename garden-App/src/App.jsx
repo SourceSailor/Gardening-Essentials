@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap CSS
 import HeroSection from "./components/HeroSection";
 import CoreConcepts from "./components/CoreConcepts";
-import LearnMore from "./components/LearnMore";
+// import LearnMore from "./components/LearnMore";
 
 function App() {
   return (

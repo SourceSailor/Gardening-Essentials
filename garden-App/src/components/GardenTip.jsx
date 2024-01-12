@@ -1,10 +1,8 @@
 export default function GardenTip({ title, description }) {
   return (
-    <>
-      <div>
-        <h5>{title}</h5>
-        <p>{description}</p>
-      </div>
-    </>
+    <div className="p-2">
+      <h5>{title}</h5>
+      <p style={{ fontSize: "13px" }}>{description}</p>
+    </div>
   );
 }
