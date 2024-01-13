@@ -1,4 +1,10 @@
 import GardenTip from "./GardenTip";
+import "../styles/core-concepts.css";
+import CoreConceptData from "../Data";
+import WaterDropIcon from "@mui/icons-material/WaterDrop";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import ContentCutIcon from "@mui/icons-material/ContentCut";
+import AccessAlarmsIcon from "@mui/icons-material/AccessAlarms";
 
 export default function CoreConcepts() {
   return (
