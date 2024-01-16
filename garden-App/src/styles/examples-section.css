@@ -1,0 +1,14 @@
+.tab-btn {
+  background-color: #2536214f;
+  border: none;
+  font-size: 1.1em;
+}
+
+.tab-btn:hover {
+  background-color: #602c55;
+  border: none;
+}
+
+.tab-selected {
+  background-color: #602c55;
+}

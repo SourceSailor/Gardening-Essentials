@@ -1,0 +1,28 @@
+.tab-text-section {
+  background-color: #2a551fe1;
+  border-radius: 20px;
+  text-align: start;
+}
+
+.learn-more-section {
+  text-align: start;
+}
+
+.is-active {
+  background-color: #602c55;
+}
+
+.tab-btn {
+  background-color: #253621cb;
+  border: none;
+  font-size: 1.1em;
+}
+
+.tab-btn:hover {
+  background-color: #602c55;
+  border: none;
+}
+
+.tab-selected {
+  background-color: #602c55;
+}

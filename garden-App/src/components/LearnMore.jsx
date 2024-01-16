@@ -1,48 +1,30 @@
 import TabButton from "./TabButton";
 import { useState } from "react";
-
-const tabBtnData = [
-  {
-    id: 1,
-    title: "Watering",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
-  },
-  {
-    id: 2,
-    title: "Sunlight",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
-  },
-  {
-    id: 3,
-    title: "Tools",
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
-  },
-  {
-    id: 4,
-    title: "Patience",
-    description:
-      "Lasdfasdforem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. ",
-  },
-];
+import { tabBtnData } from "./utils";
+import "../styles/tab-text-section.css";
 
 export default function LearnMore() {
-  const [currentTab, setCurrentTab] = useState(null);
+  const [tabSelected, setTabSelected] = useState(null);
 
-  function changeCurrentTab(tab) {
-    setCurrentTab(tab);
+  function onSelect(tab) {
+    setTabSelected(tab);
+    console.log(tab);
   }
 
   return (
-    <section className="mt-5">
-      <h4>Examples</h4>
+    <section className="mt-5 mx-auto learn-more-section col-10">
+      <h4
+        style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 1)" }}
+        className="fs-2 mb-3 "
+      >
+        Examples
+      </h4>
       <div>
         {tabBtnData.map((tab) => {
           return (
             <TabButton
-              changeCurrentTab={() => changeCurrentTab(tab)}
+              isActive={tab === tabSelected}
+              onSelect={() => onSelect(tab)}
               key={tab.id}
             >
               {tab.title}
@@ -51,18 +33,17 @@ export default function LearnMore() {
         })}
       </div>
 
-      <div className="bg-success p-5 mt-2">
-        {!currentTab ? (
-          <h2>{tabBtnData[0].title}</h2>
+      <div
+        style={{ boxShadow: "3px 8px 9px rgba(0, 0, 0, 0.4)" }}
+        className="tab-text-section p-4 mt-2 mx-auto"
+      >
+        {!tabSelected ? (
+          <h4>{"Select an example"}</h4>
         ) : (
-          <h2>{currentTab.title}</h2>
+          <h2>{tabSelected.title}</h2>
         )}
 
-        {!currentTab ? (
-          <p>{tabBtnData[0].description}</p>
-        ) : (
-          <p>{currentTab.description}</p>
-        )}
+        {!tabSelected ? null : <p>{tabSelected.description}</p>}
       </div>
     </section>
   );
